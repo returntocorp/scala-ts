@@ -4,7 +4,7 @@ publishArtifact in Test := false
 
 lazy val root = (project in file(".")).
   settings(
-    version in ThisBuild := "0.4.2",
+    version in ThisBuild := "0.4.3",
     organization in ThisBuild := "com.returntocorp",
     description := "Generate TS models from scala",
     name := "scala-ts",
