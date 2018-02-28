@@ -20,6 +20,7 @@ object ScalaParser {
     "PolyApply",
     "Object",
     "Product",
+    "Product2", // hax
     "Equals",
     "Serializable",
     "Ordered",
@@ -29,7 +30,10 @@ object ScalaParser {
     "CharSequence"
   )
 
-  private val unwantedTraitDefs = Seq("toString")
+  private val unwantedTraitDefs = Seq(
+    "toString",
+    "productElement"
+  )
 
   def parseCaseClasses(classTypes: List[Type]): List[Entity] = {
     val involvedTypes = classTypes flatMap getInvolvedTypes(Set.empty)
