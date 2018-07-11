@@ -62,7 +62,7 @@ object ScalaParser {
       members.toList,
       typeParams,
       aType.baseClasses.map(_.name.toString).filter {
-        case name if !(thisClassName :+ unwantedBaseClasses).contains(name) => false
+        case name if (thisClassName +: unwantedBaseClasses).contains(name) => false
         case _ => true
       },
       aType.typeSymbol.asClass.isTrait
